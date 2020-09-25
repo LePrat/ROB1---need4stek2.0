@@ -1,1 +1,5 @@
-https://github.com/LePrat/ROB1---need4stek2.0
+repositories:
+  ROB1---need4stek2.0:
+    type: git
+    url: https://github.com/LePrat/ROB1---need4stek2.0.git
+    version: ros2
