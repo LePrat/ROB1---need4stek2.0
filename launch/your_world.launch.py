@@ -21,7 +21,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         ExecuteProcess(
-            cmd=['gazebo', '--verbose', world, '-s', 'libgazebo_ros_init.so'],
+            cmd=['sh', 'setup.sh'],
             output='screen'),
 
         IncludeLaunchDescription(
