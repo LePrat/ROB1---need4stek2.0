@@ -1,3 +1,13 @@
+'''
+    LE FICHIER .REPOS DOIT IMPORTER TURTLEBOT 3, CREER DEUX DOSSIERS ET BUILD LES DEUX
+    LE SETUP.PY DOIT AUSSI GLOB LES RESSOURCES SINON IL N'Y A PAS ACCÈS DANS L'INSTALL
+'''
+
+# Importer dépendances turtlebot3 dans .repos
+# Visualiser une map avec la stat navigation sur rviz
+
+
+
 import os
 from glob import glob
 from setuptools import setup

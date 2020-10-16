@@ -26,16 +26,10 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
 
     launch_file_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'launch')
-    world = os.path.join(get_package_share_directory('need4stek'), 'challenge_maze.world')
 
     return LaunchDescription([
         ExecuteProcess(
-            cmd=['gazebo', '--verbose', world, '-s', 'libgazebo_ros_init.so'],
-            output='screen'),
-
-        ExecuteProcess(
             cmd=cmd,
-            prefix="bash -c 'sleep 5s; $0 $@'",
             output='screen'
         ),
 
@@ -44,3 +38,5 @@ def generate_launch_description():
             launch_arguments={'use_sim_time': use_sim_time}.items(),
         ),
     ])
+
+

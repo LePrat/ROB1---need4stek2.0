@@ -1,0 +1,2 @@
+export TURTLEBOT3_MODEL=waffle
+export GAZEBO_MODEL_PATH=$PWD/resource/models:$GAZEBO_MODEL_PATH

@@ -47,13 +47,20 @@ class Need4StekNode(Node):
 
         self.get_logger().info("Need4Stek stupid obstacle avoidance initialised.")
 
+        twist = Twist()
+        twist.angular.z = -0.5
+        twist.linear.x = 0.1
+        self.cmd_vel_pub.publish(twist)
+
     def scan_callback(self, msg: LaserScan):
+        self.get_logger().info('Scan received')
         ranges = [0, 30, 330]
         for i in range(0, 3):
             self.scan_ranges[i] = msg.ranges[ranges[i]]
         self.init_scan_state = True
 
     def cmd_vel_raw_callback(self, msg):
+        self.get_logger().info('Cmd_vel_raw received')
         self.linear_velocity = msg.linear.x
         self.angular_velocity = msg.angular.z
 
