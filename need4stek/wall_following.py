@@ -53,7 +53,7 @@ class Need4StekNode(Node):
         self.cmd_vel_pub.publish(twist)
 
     def scan_callback(self, msg: LaserScan):
-        self.get_logger().info("Scan callback.")
+        #self.get_logger().info("Scan callback.")
         ranges = [0, 30, 330]
         for i in range(0, 3):
             self.scan_ranges[i] = msg.ranges[ranges[i]]
