@@ -1,12 +1,3 @@
-'''
-    LE FICHIER .REPOS DOIT IMPORTER TURTLEBOT 3, CREER DEUX DOSSIERS ET BUILD LES DEUX
-'''
-
-# Importer dépendances turtlebot3 dans .repos
-# Visualiser une map avec la stat navigation sur rviz
-
-
-
 import os
 from glob import glob
 from setuptools import setup
