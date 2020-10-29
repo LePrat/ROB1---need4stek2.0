@@ -85,14 +85,14 @@ class Need4StekNode(Node):
         side_dist = 0.6
 
         if self.scan_ranges[CENTER] > safety_distance:
-            if self.scan_ranges[LEFT] < side_dist:
-                twist = self.turn_right()
-            elif self.scan_ranges[RIGHT] < side_dist:
+            """ if self.scan_ranges[LEFT] < side_dist:
+                twist = self.turn_right() """
+            if self.scan_ranges[RIGHT] < side_dist:
                 twist = self.turn_left()
             else:
                 twist.linear.x = self.linear_velocity
                 twist.angular.z = self.angular_velocity
         if self.scan_ranges[CENTER] < safety_distance:
-            twist = self.turn_right()
+            twist = self.turn_left()
 
         self.cmd_vel_pub.publish(twist)
