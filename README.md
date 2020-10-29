@@ -51,7 +51,7 @@ $ . install/local_setup.{z}sh
 $ export TURTLEBOT3_MODEL=waffle
 $ export GAZEBO_MODEL_PATH=$PWD/resource/models:$GAZEBO_MODEL_PATH
 # Launch the wall following node.
-$ ros2 launch need4stek capability1
+$ ros2 launch need4stek capability1.launch.py
 ```
 
 ## Launchfiles:
