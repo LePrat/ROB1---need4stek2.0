@@ -3,3 +3,8 @@ repositories:
     type: git
     url: https://github.com/LePrat/ROB1---need4stek2.0.git
     version: master
+  turtlebot3/turtlebot3:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/turtlebot3.git
+    version: ros2
+

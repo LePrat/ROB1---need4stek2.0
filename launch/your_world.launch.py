@@ -10,9 +10,11 @@ from launch.substitutions import ThisLaunchFileDir
 from launch.actions import ExecuteProcess
 from launch.substitutions import LaunchConfiguration
 
-TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
+TURTLEBOT3_MODEL = 'burger' if 'TURLEBOT_MODEL' not in os.environ else os.environ['TURTLEBOT3_MODEL']
 
-model_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'models/turtlebot3_burger/model.sdf')
+model_path = 'models/turtlebot3_' + TURTLEBOT3_MODEL + '/model.sdf'
+
+model_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), model_path)
 
 cmd = ['gz',
     'model',

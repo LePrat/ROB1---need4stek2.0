@@ -1,6 +1,5 @@
 '''
     LE FICHIER .REPOS DOIT IMPORTER TURTLEBOT 3, CREER DEUX DOSSIERS ET BUILD LES DEUX
-    LE SETUP.PY DOIT AUSSI GLOB LES RESSOURCES SINON IL N'Y A PAS ACCÈS DANS L'INSTALL
 '''
 
 # Importer dépendances turtlebot3 dans .repos
@@ -22,7 +21,9 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name), glob('launch/*.launch.py'))
+        (os.path.join('share', package_name), glob('launch/*.launch.py')),
+        ('share/' + package_name, ['resource/worlds/challenge_maze.world'])
+
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -33,7 +34,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'drive = need4stek.main:main',
+            'capability1 = need4stek.main:main',
         ],
     },
 )

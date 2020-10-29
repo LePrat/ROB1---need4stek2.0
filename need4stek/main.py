@@ -2,7 +2,7 @@
 
 import rclpy
 
-from need4stek.obstacle_detection import Need4StekNode
+from need4stek.wall_following import Need4StekNode
 
 def main(args=None):
     rclpy.init(args=args)
