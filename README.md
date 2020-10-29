@@ -65,7 +65,8 @@ Documentation:
 ### Capability1:
 File: `capability1.launch.py`
 Documentation:
-- Launches the `wall_following` node without a namespace in order to access the topics correctly.
+- Maps the namespaced topics to default topics.
+- Launches the `wall_following` node.
 - This node allows the robot to move in the world, going in a straight line untill it finds a wall, and then follows it.
 
 ## Authors:
