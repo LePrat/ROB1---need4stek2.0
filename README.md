@@ -25,9 +25,13 @@ Once you've installed the turtlebot3 packages, you can install ours.
 You need to build our launchiles before using them:
 ```sh
 # Go to the directory you cloned using `vcs import` or `wstool`.
-$ cd ROB1---need4stek2.0
+$ cd need4stek
 # Build the launchfiles
 $ colcon build
+# Add the /resource/models folders to the Gazebo model path
+$ export GAZEBO_MODEL_PATH=$PWD/resource/models:$GAZEBO_MODEL_PATH	
+# Add to your environment which model you want to use. If none is exported, 'burger' will be selected
+$ export TURTLEBOT3_MODEL=waffle
 ```
 
 ## Running the launchfiles
