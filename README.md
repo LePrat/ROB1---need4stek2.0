@@ -29,7 +29,7 @@ $ cd need4stek
 # Build the launchfiles
 $ colcon build
 # Add the /resource/models folders to the Gazebo model path
-$ export GAZEBO_MODEL_PATH=$PWD/resource/models:$GAZEBO_MODEL_PATH	
+$ export GAZEBO_MODEL_PATH=$PWD/need4stek/resource/models:$GAZEBO_MODEL_PATH	
 # Add to your environment which model you want to use. If none is exported, 'burger' will be selected
 $ export TURTLEBOT3_MODEL=waffle
 ```
@@ -41,7 +41,7 @@ In one terminal, run:
 # Source your shell. Either use the .sh or .zsh setup.
 $ . install/local_setup.{z}sh
 # Add the /resource/models folders to the Gazebo model path
-$ export GAZEBO_MODEL_PATH=$PWD/resource/models:$GAZEBO_MODEL_PATH	
+$ export GAZEBO_MODEL_PATH=$PWD/need4stek/resource/models:$GAZEBO_MODEL_PATH		
 # Add to your environment which model you want to use. If none is exported, 'burger' will be selected
 $ export TURTLEBOT3_MODEL=waffle
 # Start the world using gazebo, and ads a robot in it using gz.
@@ -53,7 +53,7 @@ In another terminal, run:
 ```sh
 $ . install/local_setup.{z}sh
 $ export TURTLEBOT3_MODEL=waffle
-$ export GAZEBO_MODEL_PATH=$PWD/resource/models:$GAZEBO_MODEL_PATH
+$ export GAZEBO_MODEL_PATH=$PWD/need4stek/resource/models:$GAZEBO_MODEL_PATH	
 # Launch the wall following node.
 $ ros2 launch need4stek drive.launch.py
 ```
