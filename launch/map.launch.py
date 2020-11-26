@@ -32,10 +32,10 @@ def generate_launch_description():
     launch_dir = os.path.join(bringup_dir, 'launch')
 
     # Create the launch configuration variables
-    slam = LaunchConfiguration('slam', default='True')
+    slam = LaunchConfiguration('slam', default='False')
     namespace = LaunchConfiguration('namespace', default='')
     use_namespace = LaunchConfiguration('use_namespace', default='False')
-    map_yaml_file = LaunchConfiguration('map', default=os.path.join(bringup_dir, 'maps', 'turtlebot3_world.yaml'))
+    map_yaml_file = LaunchConfiguration('map', default=os.path.join(get_package_share_directory('need4stek'), 'need4stek_map.yaml'))
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     params_file = LaunchConfiguration('params_file', default=os.path.join(bringup_dir, 'params', 'nav2_params.yaml'))
     default_bt_xml_filename = LaunchConfiguration('default_bt_xml_filename', default=os.path.join(
@@ -52,7 +52,7 @@ def generate_launch_description():
 
     remappings = [('/tf', 'tf'),
                   ('/tf_static', 'tf_static')]
-    
+
     world = os.path.join(get_package_share_directory('need4stek'), 'challenge_maze.world')
 
     # Specify the actions
@@ -60,7 +60,7 @@ def generate_launch_description():
             cmd=['gazebo', '--verbose', world, '-s', 'libgazebo_ros_init.so'],
             cwd=[launch_dir],
             output='screen')
-    
+
     TURTLEBOT3_MODEL = 'burger' if 'TURLEBOT_MODEL' not in os.environ else os.environ['TURTLEBOT3_MODEL']
 
     model_path = 'models/turtlebot3_' + TURTLEBOT3_MODEL + '/model.sdf'

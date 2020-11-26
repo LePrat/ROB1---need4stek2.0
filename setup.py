@@ -13,7 +13,9 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name), glob('launch/*.launch.py')),
-        ('share/' + package_name, ['resource/worlds/challenge_maze.world'])
+        ('share/' + package_name, ['resource/worlds/challenge_maze.world']),
+        ('share/' + package_name, ['resource/need4stek_map.pgm']),
+        ('share/' + package_name, ['resource/need4stek_map.yaml']),
 
     ],
     install_requires=['setuptools'],
