@@ -41,7 +41,7 @@ $ export GAZEBO_MODEL_PATH=$PWD/resource/models:$GAZEBO_MODEL_PATH
 # Add to your environment which model you want to use. If none is exported, 'burger' will be selected
 $ export TURTLEBOT3_MODEL=waffle
 # Start the world using gazebo, and ads a robot in it using gz.
-$ ros2 launch need4stek your_world_launch.py
+$ ros2 launch need4stek slam.launch.py
 ```
 
 ### Starting the wall-following algorithm:
@@ -51,13 +51,26 @@ $ . install/local_setup.{z}sh
 $ export TURTLEBOT3_MODEL=waffle
 $ export GAZEBO_MODEL_PATH=$PWD/resource/models:$GAZEBO_MODEL_PATH
 # Launch the wall following node.
-$ ros2 launch need4stek capability1.launch.py
+$ ros2 launch need4stek drive.launch.py
 ```
 
 ### Saving the map:
 Run 
 ```sh
-$ ros2 service call /map_saver/save_map nav2_msgs/srv/SaveMap "{map_topic: map, map_url: resource/need4stek_map, image_format: pgm, map_mode: trinary, free_thresh: 0.25, occupied_thresh: 0.65}"
+$ ros2 service call /map_saver/save_map nav2_msgs/srv/SaveMap "{map_topic: map, map_url: need4stek_map, image_format: pgm, map_mode: trinary, free_thresh: 0.25, occupied_thresh: 0.65}"
+```
+
+### Copying the map to resources
+Run
+```sh
+$ mv need4stek_map.pgm resource/
+$ mv need4stek_map.yaml resource/
+```
+
+### Lauching the world while loading a map
+Run
+```sh
+$ ros2 launch need4stek loader.launch.py
 ```
 
 ## Launchfiles:
@@ -68,12 +81,26 @@ Documentation:
 - Generates the world using gazebo with the .world file in the resource/wolds directory.
 - Adds the model to the map using gz with the selected model.
 
-### Capability1:
-File: `capability1.launch.py`
+### Drive:
+File: `drive.launch.py`
 Documentation:
 - Maps the namespaced topics to default topics.
 - Launches the `wall_following` node.
 - This node allows the robot to move in the world, going in a straight line untill it finds a wall, and then follows it.
+
+### Slam:
+File: `slam.launch.py`
+Documentation:
+- Creates a world
+- Adds the robot
+- Launches SLAM to navigate and build the map
+
+### Loader:
+File: `loader.launch.py`
+Documentation:
+- Creates a world
+- Adds the robot
+- Loads a given map instead of using SLAM.
 
 ## Authors:
 ### Kentin Pratelli
