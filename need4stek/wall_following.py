@@ -27,17 +27,17 @@ class Need4StekNode(Node):
 
         qos = QoSProfile(depth=10)
 
-        self.cmd_vel_pub = self.create_publisher(Twist, 'cmd_vel', qos)
+        self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', qos)
 
         self.scan_sub = self.create_subscription(
             LaserScan,
-            'scan',
+            '/scan',
             self.scan_callback,
             qos_profile=qos_profile_sensor_data)
 
         self.cmd_vel_raw_sub = self.create_subscription(
             Twist,
-            'cmd_vel_raw',
+            '/cmd_vel_raw',
             self.cmd_vel_raw_callback,
             qos)
 

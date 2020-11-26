@@ -9,12 +9,8 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='need4stek',
-            namespace='need4stek',
+            namespace='',
             executable='capability1',
             name='wall_following',
-            remappings=[
-                ('/need4stek/scan', '/scan'),
-                ('/need4stek/cmd_vel', '/cmd_vel')
-            ]
         )
     ])

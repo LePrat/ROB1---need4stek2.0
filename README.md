@@ -54,6 +54,12 @@ $ export GAZEBO_MODEL_PATH=$PWD/resource/models:$GAZEBO_MODEL_PATH
 $ ros2 launch need4stek capability1.launch.py
 ```
 
+### Saving the map:
+Run 
+```sh
+$ ros2 service call /map_saver/save_map nav2_msgs/srv/SaveMap "{map_topic: map, map_url: resource/need4stek_map, image_format: pgm, map_mode: trinary, free_thresh: 0.25, occupied_thresh: 0.65}"
+```
+
 ## Launchfiles:
 ### Your World:
 File: `your_world.launch.py`
